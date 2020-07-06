@@ -10,7 +10,7 @@ const secret = 'notsecret';
 const app = express();
 const port = process.env.PORT || 8080;
 
-const DEFAULT_NAME = 'rent-a-car';
+const DEFAULT_NAME = 'LIZA-DEV-NEW';
 const WatsonAssistantSetup = require('./lib/watson-assistant-setup');
 let setupError = '';
 
@@ -28,12 +28,12 @@ function handleSetupError(reason) {
 // Connect a client to Watson Assistant
 // The SDK gets credentials from the environment.
 const assistant = new AssistantV1({
-  version: '2019-11-01'
+  version: '2020-04-01'
 });
 console.log('Connected to Watson Assistant');
 let workspaceID; // workspaceID will be set when the workspace is created or validated.
 const assistantSetup = new WatsonAssistantSetup(assistant);
-const workspaceJson = JSON.parse(fs.readFileSync('data/assistant/workspaces/rent_a_car.json'));
+const workspaceJson = JSON.parse(fs.readFileSync('data/assistant/workspaces/LIZA-DEV-NEW.json'));
 const assistantSetupParams = { default_name: DEFAULT_NAME, workspace_json: workspaceJson };
 assistantSetup.setupAssistantWorkspace(assistantSetupParams, (err, data) => {
   if (err) {
