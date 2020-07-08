@@ -1,6 +1,6 @@
 'use strict';
 
-const AssistantV1 = require('ibm-watson/assistant/v1');
+const AssistantV2 = require('ibm-watson/assistant/v2');
 const bodyParser = require('body-parser');
 const express = require('express');
 const fs = require('fs');
@@ -27,7 +27,7 @@ function handleSetupError(reason) {
 
 // Connect a client to Watson Assistant
 // The SDK gets credentials from the environment.
-const assistant = new AssistantV1({
+const assistant = new AssistantV2({
   version: '2020-04-01'
 });
 console.log('Connected to Watson Assistant');
